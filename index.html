@@ -8,9 +8,9 @@
             <div id="ball" style="position: absolute; width: 100px; height: 100px; text-align:center; justify-content: center; background:white; border-radius: 80%; font-size: 30px; color: white">
                 <p id="t" style="color: black"></p>
             </div>
-            <div id="controls" style="position:fixed; top: 80%; left: 40%">
-                <button id="spu" style="opacity: 0.7; width: 50px; height: 50px; border-radius: 80%; background-color: black; color: white; font-size: 40px; border-style: solid; border-color: white" onclick="change_speed('u')">+</button>
-                <button id="spd" style="opacity: 0.7; width: 50px; height: 50px; border-radius: 80%; background-color: black; color: white; font-size: 40px; border-style: solid; border-color: white;" onClick="change_speed('d')">-</button>
+            <div id="controls" style="position:fixed; top: 80%; left: 40%; width: 800px;">
+                <button id="spu" style="opacity: 0.3; width: 100px; height: 100px; border-radius: 80%; background-color: black; color: white; font-size: 80px; border-style: solid; border-color: white" onclick="change_speed('u')">+</button>
+                <button id="spd" style="opacity: 0.3; width: 100px; height: 100px; border-radius: 80%; background-color: black; color: white; font-size: 80px; border-style: solid; border-color: white;" onClick="change_speed('d')">-</button>
             </div>
         </div>
         <script>
@@ -54,7 +54,6 @@
 
 	    function change_speed(control) {
 		control == 'u' ? speed += 100: speed -= 100
-		console.log(speed)
 		clearInterval(interval_id)
 		restart()
 	    }
