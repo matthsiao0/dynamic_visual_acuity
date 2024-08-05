@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hi</title>
+    </head>
+    <body>
+        <div id="bg" style="background:black; border-color: black; border-width: 50px; border-style: solid;">
+            <div id="ball" style="position: absolute; width: 100px; height: 100px; text-align:center; justify-content: center; background:white; border-radius: 80%; font-size: 30px; color: white">
+                <p id="t" style="color: black"></p>
+            </div>
+        </div>
+        <script>
+            const bg = document.getElementById("bg")
+            const ball = document.getElementById("ball")
+            const t = document.getElementById("t")
+            var inn_w = window.innerWidth
+            var inn_h = window.innerHeight
+
+            bg.style.width = inn_w + "px"
+            bg.style.height = inn_h + "px"
+
+            t.innerHTML = "w"
+
+            let s = ""
+            for (var i = 0; i < 26; ++i) {
+                s += String.fromCharCode(i + 65)
+                s += String.fromCharCode(i + 97)
+            }
+
+            function change_bg_size() {
+                inn_w = window.innerWidth
+                inn_h = window.innerHeight
+                bg.style.width = inn_w + "px"
+                bg.style.height = inn_h + "px"
+            }
+
+            function game() {
+                ball.style.top = Math.min(Math.random() * inn_h, inn_h - 200) + "px"
+                ball.style.left = Math.min(Math.random() * inn_w, inn_w - 200) + "px"
+                t.innerHTML = s.charAt(Math.random() * 53)
+            }
+
+            setInterval(
+                game,
+                800
+            )
+            // change_position(500,500)
+            // change_ball_text()
+
+            addEventListener("resize", (e) => change_bg_size())
+        </script>
+    </body>
+</html>
