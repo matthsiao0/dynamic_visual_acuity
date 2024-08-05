@@ -37,15 +37,13 @@
             function game() {
                 ball.style.top = Math.min(Math.random() * inn_h, inn_h - 200) + "px"
                 ball.style.left = Math.min(Math.random() * inn_w, inn_w - 200) + "px"
-                t.innerHTML = s.charAt(Math.random() * 52)
+                t.innerHTML = s.charAt(Math.random() * 51)
             }
 
             setInterval(
                 game,
                 800
             )
-            // change_position(500,500)
-            // change_ball_text()
 
             addEventListener("resize", (e) => change_bg_size())
         </script>
